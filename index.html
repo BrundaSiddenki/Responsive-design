@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header>
+        <h1>Welcome to The Art Gallery</h1>
+        <p>Discover unique artworks from talented artists.</p>
+    </header>
+
+    <main>
+        <aside class="filters">
+            <h2>Filter Artworks</h2>
+
+            <div class="filter-group">
+                <h3>Artist</h3>
+                <label><input type="checkbox" class="filter-artist" value="Anya Sharma"> Anya Sharma</label>
+                <label><input type="checkbox" class="filter-artist" value="Ravi Kumar"> Ravi Kumar</label>
+                <label><input type="checkbox" class="filter-artist" value="Priya Singh"> Priya Singh</label>
+                <label><input type="checkbox" class="filter-artist" value="Vikram Das"> Vikram Das</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Medium</h3>
+                <label><input type="checkbox" class="filter-medium" value="Oil on Canvas"> Oil on Canvas</label>
+                <label><input type="checkbox" class="filter-medium" value="Watercolor"> Watercolor</label>
+                <label><input type="checkbox" class="filter-medium" value="Sculpture"> Sculpture</label>
+                <label><input type="checkbox" class="filter-medium" value="Photography"> Photography</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <label><input type="radio" name="price-range" class="filter-price" value="0-5000"> ₹0 - ₹5,000</label>
+                <label><input type="radio" name="price-range" class="filter-price" value="5001-15000"> ₹5,001 - ₹15,000</label>
+                <label><input type="radio" name="price-range" class="filter-price" value="15001-50000"> ₹15,001 - ₹50,000</label>
+                <label><input type="radio" name="price-range" class="filter-price" value="50001-inf"> Over ₹50,000</label>
+                <button id="clear-price-filter">Clear Price</button>
+            </div>
+
+            <button id="clear-all-filters">Clear All Filters</button>
+        </aside>
+
+        <section class="art-gallery-listing">
+            <div class="sort-options">
+                <label for="sort-by">Sort By:</label>
+                <select id="sort-by">
+                    <option value="default">Default</option>
+                    <option value="rating-desc">Rating (High to Low)</option> <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                    <option value="artist-asc">Artist Name (A-Z)</option>
+                    <option value="year-desc">Newest Arrivals</option>
+                </select>
+                <div class="cart-summary">
+                    <button id="view-cart-btn">View Cart (<span id="cart-item-count">0</span>)</button>
+                </div>
+            </div>
+
+            <div id="art-container" class="art-grid">
+                </div>
+            <div id="no-art-message" class="hidden">No artworks match your criteria.</div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="cart-modal hidden">
+        <div class="cart-modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                </div>
+            <div class="cart-total">Total: <span id="cart-total-price">₹0.00</span></div>
+            <button id="place-order-btn" class="hidden">Place Order</button>
+            <p id="empty-cart-message">Your cart is empty.</p>
+        </div>
+    </div>
+
+    <div id="order-confirmation-modal" class="order-confirmation-modal hidden">
+        <div class="order-confirmation-content">
+            <span class="close-order-button">&times;</span>
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for your purchase. Your unique art pieces are on their way!</p>
+            <button class="continue-shopping-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
